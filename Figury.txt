@@ -1,0 +1,68 @@
+class Figury
+    {
+        public double a;
+        public double b;
+        public static double p = 3.1415;
+        public double r;
+        public double h;
+        
+        public virtual void Pole ()
+        {
+            Console.WriteLine("Pole figury wynosi:");
+        } 
+    }
+    class Kwadrat : Figury
+    {
+        public override void Pole ()
+        {
+            Console.WriteLine("Pole kwadratu wynosi: {0}", a * a);
+        }
+    }
+    class Prostokaty : Figury
+    {
+        public override void Pole()
+        {
+            Console.WriteLine("Pole prostok¹ta wynosi: {0}", a * b);
+        }
+    }
+    class Kola : Figury
+    {
+        public override void Pole()
+        {
+            double w = p * r * r;
+            Console.WriteLine("Pole ko³a wynosi: {0}", w );
+        }
+    }
+    class Trojkaty : Figury
+    {
+        public override void Pole()
+        {
+            double z = 0.5 * a * h;
+            Console.WriteLine("Pole trójk¹ta prost¹k¹tnego wynosi: {0}", z);
+        }
+    }
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Figury F1 = new Figury();
+            Kwadrat K1 = new Kwadrat();
+            Prostokaty P1 = new Prostokaty();
+            Kola Kol1 = new Kola();
+            Trojkaty T1 = new Trojkaty();
+
+            F1.Pole();
+            K1.a = 1;
+            K1.Pole();
+            P1.a = 2;
+            P1.b = 2;
+            P1.Pole();
+            Kol1.r = 10;
+            Kol1.Pole();
+            T1.a = 2;
+            T1.h = 4;
+            T1.Pole();
+
+            Console.ReadKey(); 
+        }
+    }
